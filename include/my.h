@@ -29,4 +29,7 @@ my_map *init_map(char const *filepath);
 char **get_map_init(my_map *map);
 void free_map(my_map *map);
 
+int is_square_of_size(my_map *map, int row, int col, int square_size);
+int find_biggest_square(my_map *map, int row, int col);
+
 #endif /*MY_H*/

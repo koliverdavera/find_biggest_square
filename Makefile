@@ -13,6 +13,8 @@ SRC		=	src/map_structure/display_map.c	\
 			src/map_structure/load_map.c	\
 			src/map_structure/map_init.c	\
 			src/map_structure/map_helpers.c	\
+			src/scan_squares/check_square_at_position.c	\
+			src/scan_squares/find_biggest_square_at_position.c	\
 			lib/my_putchar.c	\
 			lib/mem_alloc_2d_array.c	\
 			lib/my_nbr_len.c
