@@ -20,8 +20,10 @@ int get_rows(my_map *map)
         char digit = map->content[i];
         if (48 <= digit && digit <= 57)
             result = result * 10 + (digit - 48);
-        else
-            return -1;
+        else {
+            printf("First line of input file is incorrect\n");
+            exit(84);
+        }
     }
     map->nb_rows = result;
     return result;
@@ -71,8 +73,6 @@ int parse(my_map *map)
 my_map *init_map(char const *filepath)
 {
     char *content = read_file_to_string(filepath);
-    if (content == NULL)
-        return NULL;
     my_map *map = calloc(sizeof(my_map), 1);
     map->filepath = filepath;
     map->content = content;

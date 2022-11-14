@@ -17,16 +17,19 @@ char *read_file_to_string(char const *filepath)
     char *buffer = 0;
     long length;
     FILE *f = fopen(filepath, "rb");
-
     if (f) {
         fseek(f, 0, SEEK_END);
         length = ftell(f);
         fseek(f, 0, SEEK_SET);
-        buffer = malloc(length);
+        buffer = calloc(sizeof(char), length);
         if (buffer) {
             fread(buffer, 1, length, f);
         }
         fclose(f);
+    }
+    if (buffer == NULL) {
+        printf("An error occured while reading the file\n");
+        exit(84);
     }
     return buffer;
 }
