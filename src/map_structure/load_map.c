@@ -28,7 +28,7 @@ char *read_file_to_string(char const *filepath)
         fclose(f);
     }
     if (buffer == NULL) {
-        printf("An error occured while reading the file\n");
+        printf("An error occured while reading the file %s\n", filepath);
         exit(84);
     }
     return buffer;

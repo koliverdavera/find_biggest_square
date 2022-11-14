@@ -22,7 +22,6 @@ typedef struct my_map {
     int max_row;
     int max_col;
     int max_square_size;
-    char **map_init;
     char **map_result;
 } my_map;
 
@@ -37,5 +36,9 @@ int find_new_biggest_square(my_map *map, int row, int col);
 int scan_map(my_map *map);
 void draw_square(my_map *map);
 int process_map(my_map *map);
+int get_rows(my_map *map);
+int get_cols(my_map *map);
+int bsq(char *filepath);
+void redirect_all_std(void);
 
 #endif /*MY_H*/

@@ -6,7 +6,7 @@
 */
 
 #include <unistd.h>
-#include "../include/my.h"
+#include "../../include/my.h"
 
 void display_map(char **map, int nb_rows, int nb_cols)
 {

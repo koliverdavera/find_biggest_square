@@ -11,7 +11,7 @@
 int is_square_of_size_scan_line(my_map *map, int i, int col, int end_col)
 {
     for (int j = col; j < end_col; j++) {
-        if (map->map_init[i][j] == 'o')
+        if (map->map_result[i][j] == 'o')
             return 0;
     }
     return 1;

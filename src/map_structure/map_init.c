@@ -13,34 +13,17 @@
 #include "../../include/my.h"
 #include <stdio.h>
 
-int get_rows(my_map *map)
+void scan_one_line_map_init(my_map *map, int i, int start)
 {
-    int result = 0;
-    for (int i = 0; map->content[i] != '\n'; i++) {
-        char digit = map->content[i];
-        if (48 <= digit && digit <= 57)
-            result = result * 10 + (digit - 48);
-        else {
-            printf("First line of input file is incorrect\n");
+    for (int j = 0; j < map->nb_cols; j++) {
+        int position = start + i * (map->nb_cols + 1) + j;
+        char symb = map->content[position];
+        if (symb != 'o' && symb != '.') {
+            printf("Wrong symbols in map or its lines have different size\n");
             exit(84);
         }
+        map->map_result[i][j] = symb;
     }
-    map->nb_rows = result;
-    return result;
-}
-
-int get_cols(my_map *map)
-{
-    int i = 0;
-    while (map->content[i - 1] != '\n')
-        i++;
-    int nb_cols = 0;
-    while (map->content[i] != '\n') {
-        nb_cols++;
-        i++;
-    }
-    map->nb_cols = nb_cols;
-    return nb_cols;
 }
 
 char **get_map_init(my_map *map)
@@ -48,16 +31,11 @@ char **get_map_init(my_map *map)
     int start = 0;
     while (map->content[start - 1] != '\n')
         start++;
-    map->map_init = mem_alloc_2d_array(map->nb_rows, map->nb_cols);
     map->map_result = mem_alloc_2d_array(map->nb_rows, map->nb_cols);
     for (int i = 0; i < map->nb_rows; i++) {
-        for (int j = 0; j < map->nb_cols; j++) {
-            int position = start + i * (map->nb_cols + 1) + j;
-            map->map_init[i][j] = map->content[position];
-            map->map_result[i][j] = map->content[position];
-        }
+        scan_one_line_map_init(map, i, start);
     }
-    return map->map_init;
+    return map->map_result;
 }
 
 int parse(my_map *map)
