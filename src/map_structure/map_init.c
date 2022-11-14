@@ -28,7 +28,7 @@ void scan_one_line_map_init(my_map *map, int i, int start)
 
 char **get_map_init(my_map *map)
 {
-    int start = 0;
+    int start = 1;
     while (map->content[start - 1] != '\n')
         start++;
     map->map_result = mem_alloc_2d_array(map->nb_rows, map->nb_cols);

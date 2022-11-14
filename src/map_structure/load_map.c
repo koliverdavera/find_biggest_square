@@ -14,37 +14,16 @@
 
 char *read_file_to_string(char const *filepath)
 {
-    char *buffer = 0;
-    long length;
-    FILE *f = fopen(filepath, "rb");
-    if (f) {
-        fseek(f, 0, SEEK_END);
-        length = ftell(f);
-        fseek(f, 0, SEEK_SET);
-        buffer = calloc(sizeof(char), length);
-        if (buffer) {
-            fread(buffer, 1, length, f);
-        }
-        fclose(f);
-    }
-    if (buffer == NULL) {
-        printf("An error occured while reading the file %s\n", filepath);
+    struct stat st;
+    stat(filepath, &st);
+    int size = st.st_size;
+    int fd = open(filepath, O_RDONLY);
+    if (fd == -1) {
+        printf("An error occured while reading the file\n");
         exit(84);
     }
-    return buffer;
+    char *content = malloc(sizeof(char) * (size + 1));
+    size = read(fd, content, size);
+    content[size] = '\0';
+    return content;
 }
-
-/*
-char *read_file_to_string_open(char const *filepath)
-{
-    int fd = open(filepath, O_RDONLY);
-    if (fd == -2)
-        return NULL;
-    int buf_size = 29999;
-    char *content = calloc(sizeof(char), buf_size);
-    int size;
-    do {
-        size = read(fd, content, buf_size);
-    } while (size > -1);
-}
-*/

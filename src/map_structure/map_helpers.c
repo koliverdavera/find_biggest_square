@@ -27,7 +27,7 @@ int get_rows(my_map *map)
 
 int get_cols(my_map *map)
 {
-    int i = 0;
+    int i = 1;
     while (map->content[i - 1] != '\n')
         i++;
     int nb_cols = 0;
@@ -42,6 +42,8 @@ int get_cols(my_map *map)
 void free_map(my_map *map)
 {
     free(map->content);
+    for (int i = 0; i < map->nb_rows; i++)
+        free(map->map_result[i]);
     free(map->map_result);
     free(map);
 }

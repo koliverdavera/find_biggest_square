@@ -17,6 +17,6 @@ int bsq(char *filepath)
         return 84;
     process_map(map);
     show_result(map);
-    free(map);
+    free_map(map);
     return 0;
 }

@@ -16,7 +16,7 @@ void display_map(char **map, int nb_rows, int nb_cols);
 
 typedef struct my_map {
     char const *filepath;
-    char const *content;
+    char *content;
     int nb_rows;
     int nb_cols;
     int max_row;
