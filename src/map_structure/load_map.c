@@ -23,8 +23,7 @@ char *read_file_to_string(char const *filepath)
         length = ftell(f);
         fseek(f, 0, SEEK_SET);
         buffer = malloc(length);
-        if (buffer)
-        {
+        if (buffer) {
             fread(buffer, 1, length, f);
         }
         fclose(f);

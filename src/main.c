@@ -13,13 +13,9 @@
 int main(int ac, char *args[])
 {
     my_map *map = init_map(args[1]);
-    int row = args[2][0] - 48;
-    int col = args[3][0] - 48;
-//    int square_size = args[4][0] - 48;
-//    int check = is_square_of_size(map, row, col, square_size);
-//      printf("At position %d, %d square of size %d detected: %d\n", row, col, square_size, check);
-    int square = find_biggest_square(map, row, col);
-    printf("At position %d and %d the biggest size is %d\n", row, col, square);
-    show_map_object(map, 0, 1, 0);
+    if (map == NULL)
+        return 84;
+    process_map(map);
+    show_result(map);
     free(map);
 }

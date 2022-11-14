@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** my .c
+** display_map.c
 ** File description:
-** 
+** display map funtions for bsq
 */
 
 #include <unistd.h>

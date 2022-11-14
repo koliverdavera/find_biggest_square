@@ -47,10 +47,12 @@ char **get_map_init(my_map *map)
     while (map->content[start - 1] != '\n')
         start++;
     map->map_init = mem_alloc_2d_array(map->nb_rows, map->nb_cols);
+    map->map_result = mem_alloc_2d_array(map->nb_rows, map->nb_cols);
     for (int i = 0; i < map->nb_rows; i++) {
         for (int j = 0; j < map->nb_cols; j++) {
             int position = start + i * (map->nb_cols + 1) + j;
             map->map_init[i][j] = map->content[position];
+            map->map_result[i][j] = map->content[position];
         }
     }
     return map->map_init;
@@ -63,6 +65,7 @@ int parse(my_map *map)
         return -1;
     get_cols(map);
     get_map_init(map);
+    return 1;
 }
 
 my_map *init_map(char const *filepath)
