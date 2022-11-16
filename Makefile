@@ -13,13 +13,18 @@ SRC		=	src/bsq.c	\
 			src/map_structure/display_map.c	\
 			src/map_structure/load_map.c	\
 			src/map_structure/map_init.c	\
+			src/map_structure/generate_map.c	\
 			src/map_structure/map_helpers.c	\
 			src/scan_squares/check_square.c	\
 			src/scan_squares/find_biggest_square.c	\
 			src/scan_squares/process_square.c	\
 			lib/my_putchar.c	\
 			lib/mem_alloc_2d_array.c	\
-			lib/my_nbr_len.c
+			lib/my_put_nbr.c	\
+			lib/string_to_int.c	\
+			lib/my_putstr.c	\
+			lib/my_strlen.c
+
 LIB		=	-L./ -lmy
 OBJ		=	$(SRC:.c=.o)
 

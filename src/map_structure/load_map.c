@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include "../../include/my.h"
 
 char *read_file_to_string(char const *filepath)
 {
@@ -19,7 +19,7 @@ char *read_file_to_string(char const *filepath)
     int size = st.st_size;
     int fd = open(filepath, O_RDONLY);
     if (fd == -1) {
-        printf("An error occured while reading the file\n");
+        my_putstr("An error occured while reading the file\n");
         exit(84);
     }
     char *content = malloc(sizeof(char) * (size + 1));

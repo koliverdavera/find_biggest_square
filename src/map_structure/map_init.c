@@ -11,7 +11,6 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include "../../include/my.h"
-#include <stdio.h>
 
 void scan_one_line_map_init(my_map *map, int i, int start)
 {
@@ -19,7 +18,7 @@ void scan_one_line_map_init(my_map *map, int i, int start)
         int position = start + i * (map->nb_cols + 1) + j;
         char symb = map->content[position];
         if (symb != 'o' && symb != '.') {
-            printf("Wrong symbols in map or its lines have different size\n");
+            my_putstr("Wrong symbols in map or lines have different size\n");
             exit(84);
         }
         map->map_result[i][j] = symb;
@@ -51,7 +50,7 @@ int parse(my_map *map)
 my_map *init_map(char const *filepath)
 {
     char *content = read_file_to_string(filepath);
-    my_map *map = calloc(sizeof(my_map), 1);
+    my_map *map = malloc(sizeof(my_map) * 1);
     map->filepath = filepath;
     map->content = content;
     parse(map);

@@ -6,7 +6,6 @@
 */
 
 #include "../../include/my.h"
-#include <stdio.h>
 
 int is_square_of_size_scan_line(my_map *map, int i, int col, int end_col)
 {
