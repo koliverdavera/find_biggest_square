@@ -31,7 +31,8 @@ OBJ		=	$(SRC:.c=.o)
 NAME		=	bsq
 
 UT_SRC		=	tests/easy_test.c	\
-			tests/intermediate_test.c
+			tests/intermediate_test.c	\
+			tests/test_generate_map.c
 
 UT_NAME		=	unit_tests
 
