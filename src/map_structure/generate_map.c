@@ -67,7 +67,7 @@ char *generate_content(my_map *map, char *size_str)
 
 my_map *generate_map_init(char *size_str, char *pattern)
 {
-    my_map *map = calloc(sizeof(my_map), 1);
+    my_map *map = malloc(sizeof(my_map));
     map->pattern = pattern;
     map->nb_rows = string_to_int(size_str);
     map->nb_cols = string_to_int(size_str);
