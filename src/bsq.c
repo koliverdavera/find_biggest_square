@@ -1,32 +1,29 @@
 /*
 ** EPITECH PROJECT, 2022
-** main.c
+** bsq.c
 ** File description:
-** main file for bsq project
+** two bsq functions for bsq project
 */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "../include/my.h"
 
-int bsq(char *filepath)
+int process_map(my_map *map)
 {
-    my_map *map = init_map(filepath);
-    if (map == NULL)
-        return 84;
-    process_map(map);
-    show_result(map);
+    parse(map);
+    browse(map);
+    display_map_chars(map);
     free_map(map);
     return 0;
 }
 
-int generate_bsq(char *size_str, char *pattern)
+int bsq_from_file(char *filepath)
 {
-    my_map *map = generate_map_init(size_str, pattern);
-    if (map == NULL)
-        return 84;
-    process_map(map);
-    show_result(map);
-    free_map(map);
-    return 0;
+    my_map *map = init_map_from_file(filepath);
+    return process_map(map);
+}
+
+int bsq_generate(char *size, char *pattern)
+{
+    my_map *map = map_generate_init(size, pattern);
+    return process_map(map);
 }

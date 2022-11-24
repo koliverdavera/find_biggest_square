@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include "../../include/my.h"
+#include "../include/my.h"
 
 char *read_file_to_string(char const *filepath)
 {

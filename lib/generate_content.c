@@ -9,7 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include "../../include/my.h"
+#include "../include/my.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -21,7 +21,7 @@ void update_pattern_counter(my_map *map, int *pattern_counter)
         *pattern_counter = *pattern_counter + 1;
 }
 
-void generate_map_content(my_map *map, char *size_str)
+void generate_map_content_string(my_map *map, char *size_str)
 {
     int size = map->nb_cols * (map->nb_rows + 1);
     int start = strlen(size_str) + 1;
@@ -61,17 +61,6 @@ char *generate_content(my_map *map, char *size_str)
         i++;
     }
     map->content[i] = '\n';
-    generate_map_content(map, size_str);
+    generate_map_content_string(map, size_str);
     return map->content;;
-}
-
-my_map *generate_map_init(char *size_str, char *pattern)
-{
-    my_map *map = malloc(sizeof(my_map));
-    map->pattern = pattern;
-    map->nb_rows = string_to_int(size_str);
-    map->nb_cols = string_to_int(size_str);
-    generate_content(map, size_str);
-    parse(map);
-    return map;
 }

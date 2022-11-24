@@ -2,21 +2,11 @@
 ** EPITECH PROJECT, 2022
 ** my.h
 ** File description:
-** my.h
+** header file for bsq
 */
 
 #ifndef MY_H_
     #define MY_H_
-void my_putchar(char c);
-int my_put_nbr(long long int nb);
-int my_nbr_len(int nb);
-int string_to_int(char *line);
-int my_strlen(char const *str);
-int my_putstr(char const *str);
-char **mem_alloc_2d_array(int nb_rows, int nb_cols);
-char **load_2d_arr_from_file(char const *filepath, int nb_rows, int nb_cols);
-char *read_file_to_string(char const *filepath);
-void display_map(char **map, int nb_rows, int nb_cols);
 
 typedef struct my_map {
     char const *filepath;
@@ -27,26 +17,35 @@ typedef struct my_map {
     int max_row;
     int max_col;
     int max_square_size;
-    char **map_result;
+    char **init;
+    int **result;
 } my_map;
 
-void show_result(my_map *map);
-void show_map_object(my_map *map, int info, int map_init, int map_result);
-my_map *init_map(char const *filepath);
-char **get_map_init(my_map *map);
-void free_map(my_map *map);
-
-int is_square_of_size(my_map *map, int row, int col, int square_size);
-int find_new_biggest_square(my_map *map, int row, int col);
-int scan_map(my_map *map);
-void draw_square(my_map *map);
-int process_map(my_map *map);
-int parse(my_map *map);
+char **mem_alloc_2d_arr_char(int nb_rows, int nb_cols);
+int **mem_alloc_2d_arr_int(int nb_rows, int nb_cols);
+void my_putchar(char c);
+int my_put_nbr(long long int nb);
+int my_putstr(char const *str);
+int my_strlen(char const *str);
+int string_to_int(char *line);
+char *read_file_to_string(char const *filepath);
+char *generate_content(my_map *map, char *size_str);
 int get_rows(my_map *map);
 int get_cols(my_map *map);
-int bsq(char *filepath);
+void display_map_chars(my_map *map);
+void display_map_int(my_map *map);
+void free_map(my_map *map);
+
+int bsq_from_file(char *filepath);
+int bsq_generate(char *size, char *pattern);
+
+my_map *init_map_from_file(char const *filepath);
+my_map *map_generate_init(char *size, char *pattern);
+int parse(my_map *map);
+void scan_map(my_map *map);
+void draw_square(my_map *map);
+void browse(my_map *map);
+
 void redirect_all_std(void);
-int generate_bsq(char *size_str, char *pattern);
-my_map *generate_map_init(char *size_str, char *pattern);
 
 #endif /*MY_H*/

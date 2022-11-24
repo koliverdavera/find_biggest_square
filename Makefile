@@ -10,21 +10,23 @@ CPPFLAGS	=	-I include
 MAIN		=	src/main.c
 NAME_LIB	=	libmy.a
 SRC		=	src/bsq.c	\
-			src/map_structure/display_map.c	\
-			src/map_structure/load_map.c	\
-			src/map_structure/map_init.c	\
-			src/map_structure/generate_map.c	\
-			src/map_structure/map_helpers.c	\
-			src/scan_squares/check_square.c	\
-			src/scan_squares/find_biggest_square.c	\
-			src/scan_squares/process_square.c	\
+			src/map_structure/map_from_file_init.c	\
+			src/map_structure/map_generate_init.c	\
+			src/map_structure/parse_content.c	\
+			src/map_structure/browse_map.c	\
+			src/squares/find_biggest_square.c	\
+			src/squares/draw_square.c	\
 			lib/my_putchar.c	\
 			lib/mem_alloc_2d_array.c	\
 			lib/my_put_nbr.c	\
 			lib/string_to_int.c	\
 			lib/my_putstr.c	\
-			lib/my_strlen.c
-
+			lib/my_strlen.c	\
+			lib/read_file_to_string.c	\
+			lib/generate_content.c	\
+			lib/get_rows_cols.c	\
+			lib/display_map.c	\
+			lib/free_map.c
 LIB		=	-L./ -lmy
 OBJ		=	$(SRC:.c=.o)
 
