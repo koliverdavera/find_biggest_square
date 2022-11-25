@@ -16,13 +16,3 @@ void display_map_chars(my_map *map)
         my_putchar('\n');
     }
 }
-
-void display_map_int(my_map *map)
-{
-    for (int i = 0; i < map->nb_rows; i++) {
-        for (int j = 0; j < map->nb_cols; j++) {
-            my_put_nbr(map->result[i][j]);
-        }
-        my_putchar('\n');
-    }
-}

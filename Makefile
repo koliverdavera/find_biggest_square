@@ -18,10 +18,8 @@ SRC		=	src/bsq.c	\
 			src/squares/draw_square.c	\
 			lib/my_putchar.c	\
 			lib/mem_alloc_2d_array.c	\
-			lib/my_put_nbr.c	\
 			lib/string_to_int.c	\
 			lib/my_putstr.c	\
-			lib/my_strlen.c	\
 			lib/read_file_to_string.c	\
 			lib/generate_content.c	\
 			lib/get_rows_cols.c	\
