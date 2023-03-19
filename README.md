@@ -33,7 +33,9 @@ There are two ways to run the program:
 - Clone this repository
 - Compile using Makefile:  `make all`
 - Then run generated script with `./bsq file_name_with_map` or `./bsq <number_of_lines> <pattern_to_repeat>`
-- Alternatively, it is possible to run all tests on different size maps using `make tests_run`
+- Alternatively, it is possible to run all tests on different size maps using `make tests_run` (you need to have [Criterion](https://criterion.readthedocs.io/en/master/) installed)
+<img width="852" alt="image" src="https://user-images.githubusercontent.com/90262631/226179103-dd9cd294-f11e-4c26-8489-65dace01eb60.png">
+
 
 ### Quality
 - 95% of tests pass (in EPITECH testing system)
