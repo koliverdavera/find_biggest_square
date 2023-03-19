@@ -27,8 +27,7 @@ There are two ways to run the program:
 1. Run with a map from file
 <img width="432" alt="image" src="https://user-images.githubusercontent.com/90262631/226178726-a0848993-d417-486f-947d-fa370a24380e.png">
 2. Run with generated map
-<img width="432" alt="image" src="https://user-images.githubusercontent.com/90262631/226178822-e3c2f832-fafc-44de-a4ff-caa4bdb025b9.png">
-
+<img width="511" alt="image" src="https://user-images.githubusercontent.com/90262631/226178914-17f689d3-de92-4a3e-9315-c708291d144e.png">
 
 ### How to test
 - Clone this repository
