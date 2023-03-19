@@ -16,6 +16,6 @@ other lines,
 You program must print the board, with some “.” replaced by “x” to represent the largest square you found.
 
 ### Solution:
-- dynamic programming algorithm to solve the task
+- dynamic programming algorithm to solve the task, description [here](https://stackoverflow.com/questions/20335427/most-efficient-algorithm-to-find-the-biggest-square-in-a-two-dimension-map)
 - using SOLID principles to structurise my project
 - creating map_structure to parse input, store map chracteristics, find biggest square and print it
