@@ -16,14 +16,19 @@ Your program must print the board, with some “.” replaced by “x” to repr
 
 There are two ways to run the program:
 1. Read map from the file `./bsq file_name_with_map`
-2. Generate map from number of lines and pattern to repeat `./bsq <number_of_lines> <pattern_to_repeat>`
+2. Generate map from number of lines and pattern to repeat `./bsq <width_of_the_map> <pattern_to_repeat>`
 
 ### Solution:
 - Dynamic programming algorithm to solve the task, description [here](https://stackoverflow.com/questions/20335427/most-efficient-algorithm-to-find-the-biggest-square-in-a-two-dimension-map)
 - Using SOLID principles to structure my project
 - Creating map_structure to parse input, store map characteristics, find biggest square, and print it
 
-  
+### Examples
+1. Run with a map from file
+<img width="432" alt="image" src="https://user-images.githubusercontent.com/90262631/226178726-a0848993-d417-486f-947d-fa370a24380e.png">
+2. Run with generated map
+<img width="432" alt="image" src="https://user-images.githubusercontent.com/90262631/226178822-e3c2f832-fafc-44de-a4ff-caa4bdb025b9.png">
+
 
 ### How to test
 - Clone this repository
