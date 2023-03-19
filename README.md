@@ -24,8 +24,8 @@ There are two ways to run the program:
 - Creating map_structure to parse input, store map characteristics, find biggest square, and print it
 
 ### Examples
-1. Run with a map from file. First line of the file contains amount of lines in the map. (Sample files ith maps are available in 'tests/maps-easy/' and 'tests/maps-intermediate/')
-<img width="432" alt="image" src="https://user-images.githubusercontent.com/90262631/226178726-a0848993-d417-486f-947d-fa370a24380e.png">
+1. Run with a map from file. First line of the file contains amount of lines in the map. (Sample files ith maps are available in `tests/maps-easy/` and `tests/maps-intermediate/`)
+<img width="616" alt="image" src="https://user-images.githubusercontent.com/90262631/226179448-bb535c39-63b4-4f8e-8ded-3d62a67fece2.png">
 2. Run with generated map
 <img width="511" alt="image" src="https://user-images.githubusercontent.com/90262631/226178914-17f689d3-de92-4a3e-9315-c708291d144e.png">
 
